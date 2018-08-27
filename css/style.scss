@@ -1,0 +1,318 @@
+$navyBlue: #2B3755;
+$offBlack: #343434;
+$textBlack: #838282;
+$offWhite: #e8e8e8;
+$inactiveGrey: #B1B1B1;
+$maxContentWidth: 1080px; //Picked a little at random without a design file
+
+//Simple type of style reset
+* {
+	box-sizing: border-box;
+	font-family: sans-serif;
+	transition: .5s;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+}
+
+ul, li, p, html, body {
+	padding: 0;
+	margin: 0;
+}
+
+nav, main {
+	max-width: $maxContentWidth;
+	margin: 0 auto;
+}
+
+//**** HEADER ****
+
+.headerLogo {
+	height: 130px;
+	padding: 14px 0;
+
+	img {
+		display: block;
+		margin: 0 auto;
+		height: 100%;
+	}
+}
+
+nav {
+	//Emmet autocomplete added all 5
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	background: $offBlack;
+
+	a {
+		flex: 1 1 auto;
+		font-size: 12px;
+		color: $offWhite;
+		padding: 7px 0;
+		text-align: center;
+		text-transform: uppercase;
+
+		&:hover {
+			background: $navyBlue;
+		}
+
+		&:last-of-type {
+			background: $navyBlue;
+			border-left: 2px solid #fff;
+		}
+	}
+}
+
+//**** MAIN SECTION ****
+
+.breadcrumbList {
+	padding: 10px 0;
+	margin-bottom: 20px;
+
+	li {
+		display: inline-block;
+		margin: 0 5px;
+
+		a, span {
+			font-size: 12px;
+			color: $inactiveGrey;
+
+			&.active {
+				color: $offBlack;
+			}
+		}
+
+		a:hover {
+			color: $offBlack;
+		}
+	}
+}
+
+.productImages {
+	display: inline-block;
+	width: 58%;
+
+	.mainImgContainer {
+		position: relative;
+		height: 575px;
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			opacity: 0;
+
+			&.active {
+				opacity: 1;
+			}
+		}
+	}
+	.smallImgContainer {
+		margin-left: 40px;
+
+		img {
+			margin: 0;
+			border: 3px solid #fff;
+
+			&.active, &:hover {
+				cursor: pointer;
+				border: 3px solid $offBlack;
+			}
+		}
+	}
+}
+
+.productInfo {
+	display: inline-block;
+	width: 40%;
+	vertical-align: top;
+}
+
+.mainInfo {
+	color: $textBlack;
+
+	h1 {
+		font-family: serif;
+		font-size: 22px;
+		font-weight: 400;
+		color: $offBlack;
+		margin: 0 0 7px;
+	}
+
+	p {
+		font-size: 14px;
+		line-height: 18px;
+	}
+
+	.productQualities {
+		margin: 10px 0 10px 30px;
+
+		li {
+			list-style-type: initial;
+			font-size: 14px;
+			color: $textBlack; // Would use own image for bullet point to make it darker and better match design
+		}
+	}
+
+	.totalPrice {
+		font-size: 24px;
+		color: $offBlack;
+		margin: 20px 0;
+	}
+
+	label {
+		display: none;
+	}
+
+	input[name="productQuantity"] {
+		height: 40px;
+		width: 70px;
+		text-align: center;
+		font-size: 18px;
+		box-shadow: 0px 0px 0px $offBlack;
+		margin-bottom: 20px;
+	}
+
+	.addToCart {
+		display: inline-block;
+		background: url('../assets/button-add-to-cart.png') 0 0 no-repeat;
+		height: 42px;
+		width: 150px;
+		margin-bottom: 20px;
+
+		&:hover {
+			cursor: pointer;
+			opacity: .7;
+		}
+	}
+
+	.progressBar {
+		display: inline-block;
+		position: relative;
+	    height: 7px;
+	    width: 200px;
+	    vertical-align: top;
+	    margin: 18px 0 0;
+
+		.bar {
+			opacity: 0;
+			height: 100%;
+			width: 10%;
+			background: green;
+		}
+
+		.successMessage {
+			display: none;
+			position: absolute;
+			top: -5px;
+			color: green;
+			font-size: 12px;
+		}
+
+		&.active {
+			.bar {
+				width: 100%;
+				animation-name: addToCart;
+			    animation-duration: 4s;
+			    animation-iteration-count: 1;
+			}
+		}
+	}
+}
+
+@keyframes addToCart {
+	0% {width: 1%; opacity: 1;}
+	95% {width: 100%; opacity: 1;}
+	100% {opacity: 0;}
+}
+
+.moreInfo {
+	border-top: 2px solid $offBlack;
+	border-bottom: 2px solid $offBlack;
+
+	li {
+		border-bottom: 1px solid $inactiveGrey;
+		padding: 10px 0;
+		max-height: 45px;
+		overflow: hidden;
+		transition: 1s;
+
+		&.active {
+			max-height: 150px; //Or value bigger than will ever be needed.
+		}
+
+		&:last-of-type {
+			border-bottom: none;
+		}
+
+		img, h2 {
+			display: inline-block;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		h2 {
+			margin: 0 5px 10px;
+			text-transform: uppercase;
+			font-family: serif;
+			font-size: 21px;
+			font-weight: 400;
+		}
+
+		p {
+			color: $textBlack;
+			font-size: 14px;
+			line-height: 18px;
+			margin-left: 20px;
+		}
+	}
+}
+
+//**** FOOTER ****
+
+footer {
+	margin-top: 60px;
+	height: 40px;
+	border-top: 1px solid $inactiveGrey;
+	background: $offWhite;
+
+	ul.footerList {
+		text-align: center;
+		margin-top: 8px;
+
+		li {
+			display: inline-block;
+			margin: 0;
+			padding: 0 6px;
+			border-right: 1px solid $textBlack;
+		}
+
+		li, a, span {
+			font-size: 10px;
+			color: $textBlack;
+		}
+
+		span.textRed {
+			color: red;
+		}
+
+		a:hover {
+			color: $offBlack;
+		}
+	}
+}
+

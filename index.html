@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="title" content="WSI Markup Challenge - Starkey">
+	<meta name="description" content="WSI Markup Challenge - Starkey">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>WSI Markup Challenge</title>
+</head>
+<body>
+	<header>
+		<div class="headerLogo">
+			<img src="./assets/logo.png" alt="WSI Logo">
+		</div>
+		<nav>
+			<!-- Assuming these are simple links and not dropdown menus -->
+			<a href="#">Cookware</a>
+			<a href="#">Cooks' Tools</a>
+			<a href="#">Cutlery</a>
+			<a href="#">Electronics</a>
+			<a href="#">Bakeware</a>
+			<a href="#">Food</a>
+			<a href="#">Tabletop &amp; Bar</a>
+			<a href="#">Homekeeping</a>
+			<a href="#">Outdoor</a>
+			<a href="#">Sale</a>
+			<a href="#" class="homeLink">Williams-Sonoma Home</a>
+		</nav>
+	</header>
+
+	<main>
+		<section id="breadcrumbs">
+			<ul class="breadcrumbList">
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<span>></span>
+				</li>
+				<li>
+					<a href="#">Homekeeping</a>
+				</li>
+				<li>
+					<span>></span>
+				</li>
+				<li>
+					<a href="#">Aprons</a>
+				</li>
+				<li>
+					<span>></span>
+				</li>
+				<li>
+					<a href="#">Adult Aprons</a>
+				</li>
+				<li>
+					<span>></span>
+				</li>
+				<li>
+					<a href="#" class="active">Williams-Sonoma Classic Apron, French Blue</a>
+				</li>
+			</ul>
+		</section>
+		<section id="productContainer">
+			<div class="productImages">
+				<div class="mainImgContainer">
+					<img src="./assets/product-large-a.jpg" alt="Style choice A" class="active">
+					<img src="./assets/product-large-b.jpg" alt="Style choice B">
+					<img src="./assets/product-large-c.jpg" alt="Style choice C">
+					<img src="./assets/product-large-d.jpg" alt="Style choice D">
+				</div>
+				<div class="smallImgContainer">
+					<img src="./assets/product-small-a.jpg" alt="Style choice A" data-index=0  class="active">
+					<img src="./assets/product-small-b.jpg" alt="Style choice B" data-index=1 >
+					<img src="./assets/product-small-c.jpg" alt="Style choice C" data-index=2 >
+					<img src="./assets/product-small-d.jpg" alt="Style choice D" data-index=3 >
+				</div>
+			</div>
+
+			<div class="productInfo">
+				<div class="mainInfo">
+					<h1>Williams-Sonoma Classic Apron, French Blue</h1>
+					<p class="productDescription">
+						A generously sized apron is a necessity in any kitchen, and ours will brighten yours with lively color. Sewn of thick cotton, it can be personalized or monogrammed with up to nine characters, all the same height, embroidered in your choice of color. An apron of this quality makes a welcome gift for any cook.
+					</p>
+					<ul class="productQualities">
+						<li>Durable 100% cotton construction.</li>
+						<li>Adjustable neckband ensures a good fit.</li>
+						<li>Roomy front pockets hold small tools.</li>
+						<li>Machine-wash.</li>
+					</ul>
+					<p class="totalPrice">
+						$19.95
+					</p>
+					<label for="productQuantity">Select number to buy</label>
+					<input type="number" name="productQuantity" step="1" placeholder=1 />
+					<div>
+						<div class="addToCart"></div>
+						<div class="progressBar">
+							<div class="bar"></div>
+							<p class="successMessage">Successfully added to your cart!</p>
+							<!-- No error message needed for challenge -->
+						</div>
+					</div>
+				</div>
+
+				<ul class="moreInfo">
+					<!-- Assumed main text of expandable area wouldn't change when clicked on --> 
+					<li class="active">
+						<img src="./assets/arrow-expanded.png" alt="Expanded">
+						<h2>Expandable</h2>
+						<p>This section is expanded. This section can be collapsed by clicking on the "expandable" text. This section is expanded. This section can be collapsed by clicking on the "expandable" text.</p>
+					</li>
+					<li>
+						<img src="./assets/arrow-collapsed.png" alt="Collapsed">
+						<h2>Expandable</h2>
+						<p>This section is expanded. This section can be collapsed by clicking on the "expandable" text. This section is expanded. This section can be collapsed by clicking on the "expandable" text.</p>
+					</li>
+					<li>
+						<img src="./assets/arrow-collapsed.png" alt="Collapsed">
+						<h2>Expandable</h2>
+						<p>This section is expanded. This section can be collapsed by clicking on the "expandable" text. This section is expanded. This section can be collapsed by clicking on the "expandable" text.</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<ul class="footerList">
+			<li>&copy; <span class="year">2018</span> Williams-Sonoma Inc. All Rights Reserved </li>
+			<li><a href="#">Terms &amp; Conditions</a> <span class="textRed">(Updated March 2016)</span></li>
+			<li><a href="#">Privacy Policy</a></li>
+			<li><a href="#">Legal Statement</a></li>
+		</ul>
+	</footer>
+</body>
+
+<script src="./js/main.js"></script>
+</html>
